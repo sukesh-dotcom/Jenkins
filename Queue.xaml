@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Queue" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="754,453.3333333333333" sap2010:WorkflowViewState.IdRef="Queue_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Queue" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="758,1549.3333333333333" sap2010:WorkflowViewState.IdRef="Queue_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
       <x:String>System.Activities</x:String>
@@ -64,119 +64,168 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Queue" sap:VirtualizedContainerService.HintSize="400,266.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Queue" sap:VirtualizedContainerService.HintSize="400,1484.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="value" />
       <Variable x:TypeArguments="ui:QueueItem" Name="transaction" />
+      <Variable x:TypeArguments="ui:QueueItem" Name="transa" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:AddTransactionItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Transaction Item" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="AddTransactionItem_2" QueueType="qu" TransactionItem="[transaction]">
-      <ui:AddTransactionItem.TransactionInformation>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddTransactionItem ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Transaction Item" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="AddTransactionItem_2" QueueType="qu" TransactionItem="[transaction]">
+            <ui:AddTransactionItem.TransactionInformation>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+            </ui:AddTransactionItem.TransactionInformation>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddTransactionItem>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,397.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" DueDate="2021-12-25" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="AddQueueItem_7" Priority="High" QueueType="qu" Reference="[value.ToString]">
+            <ui:AddQueueItem.ItemInformation>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+            </ui:AddQueueItem.ItemInformation>
+            <ui:AddQueueItem.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:AddQueueItem.TimeoutMS>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddQueueItem>
+          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" DueDate="2021-12-25" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="High" QueueType="qu" Reference="[value.ToString]">
+            <ui:AddQueueItem.ItemInformation>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+            </ui:AddQueueItem.ItemInformation>
+            <ui:AddQueueItem.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:AddQueueItem.TimeoutMS>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddQueueItem>
+          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" DueDate="2021-12-26" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="AddQueueItem_4" Priority="High" QueueType="qu" Reference="[value.ToString]">
+            <ui:AddQueueItem.ItemInformation>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+            </ui:AddQueueItem.ItemInformation>
+            <ui:AddQueueItem.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:AddQueueItem.TimeoutMS>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddQueueItem>
+          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" DueDate="2021-12-26" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="AddQueueItem_5" Priority="Normal" QueueType="qu" Reference="[value.ToString]">
+            <ui:AddQueueItem.ItemInformation>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+            </ui:AddQueueItem.ItemInformation>
+            <ui:AddQueueItem.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:AddQueueItem.TimeoutMS>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddQueueItem>
+          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" DueDate="2021-12-27" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="AddQueueItem_6" Priority="High" QueueType="qu" Reference="[value.ToString]">
+            <ui:AddQueueItem.ItemInformation>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+            </ui:AddQueueItem.ItemInformation>
+            <ui:AddQueueItem.TimeoutMS>
+              <InArgument x:TypeArguments="x:Int32" />
+            </ui:AddQueueItem.TimeoutMS>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:AddQueueItem>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:GetQueueItem ContinueOnError="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="338,484" sap2010:WorkflowViewState.IdRef="GetQueueItem_4" QueueType="qu" TransactionItem="[transa]">
+      <ui:GetQueueItem.Reference>
+        <InArgument x:TypeArguments="x:String" />
+      </ui:GetQueueItem.Reference>
+      <ui:GetQueueItem.TimeoutMS>
+        <InArgument x:TypeArguments="x:Int32" />
+      </ui:GetQueueItem.TimeoutMS>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:GetQueueItem>
+    <ui:SetTransactionStatus ContinueOnError="{x:Null}" ServiceBaseAddress="{x:Null}" DisplayName="Set Transaction Status" ErrorType="Application" sap:VirtualizedContainerService.HintSize="338,719.3333333333334" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_1" Status="Failed" TransactionItem="[transa]">
+      <ui:SetTransactionStatus.Analytics>
         <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-      </ui:AddTransactionItem.TransactionInformation>
+      </ui:SetTransactionStatus.Analytics>
+      <ui:SetTransactionStatus.Details>
+        <InArgument x:TypeArguments="x:String" />
+      </ui:SetTransactionStatus.Details>
+      <ui:SetTransactionStatus.Output>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+      </ui:SetTransactionStatus.Output>
+      <ui:SetTransactionStatus.Reason>
+        <InArgument x:TypeArguments="x:String" />
+      </ui:SetTransactionStatus.Reason>
+      <ui:SetTransactionStatus.TimeoutMS>
+        <InArgument x:TypeArguments="x:Int32" />
+      </ui:SetTransactionStatus.TimeoutMS>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:AddTransactionItem>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="CommentOut_5">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,266.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" DueDate="2023-05-18" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="High" QueueType="qu" Reference="[value.ToString]">
-            <ui:AddQueueItem.ItemInformation>
-              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-            </ui:AddQueueItem.ItemInformation>
-            <ui:AddQueueItem.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:AddQueueItem.TimeoutMS>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:AddQueueItem>
-          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" DueDate="2023-05-19" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="High" QueueType="qu" Reference="[value.ToString]">
-            <ui:AddQueueItem.ItemInformation>
-              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-            </ui:AddQueueItem.ItemInformation>
-            <ui:AddQueueItem.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:AddQueueItem.TimeoutMS>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:AddQueueItem>
-          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item" DueDate="2023-05-17" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="High" QueueType="qu" Reference="[value.ToString]">
-            <ui:AddQueueItem.ItemInformation>
-              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-            </ui:AddQueueItem.ItemInformation>
-            <ui:AddQueueItem.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:AddQueueItem.TimeoutMS>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:AddQueueItem>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="CommentOut_6">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,136" sap2010:WorkflowViewState.IdRef="Sequence_7">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:GetQueueItem ContinueOnError="{x:Null}" DisplayName="Get Transaction Item" sap:VirtualizedContainerService.HintSize="338,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetQueueItem_3" QueueType="qu">
-            <ui:GetQueueItem.Reference>
-              <InArgument x:TypeArguments="x:String" />
-            </ui:GetQueueItem.Reference>
-            <ui:GetQueueItem.TimeoutMS>
-              <InArgument x:TypeArguments="x:Int32" />
-            </ui:GetQueueItem.TimeoutMS>
-            <ui:GetQueueItem.TransactionItem>
-              <OutArgument x:TypeArguments="ui:QueueItem" />
-            </ui:GetQueueItem.TransactionItem>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:GetQueueItem>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
+    </ui:SetTransactionStatus>
   </Sequence>
 </Activity>
